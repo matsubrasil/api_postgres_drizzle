@@ -1,0 +1,41 @@
+@host =  http://localhost:8080
+@baseURL = {{host}}/api/v1
+@contentType = application/json
+
+###
+GET {{host}}
+Content-Type: {{contentType}}
+
+###
+GET {{host}}/healthcheck
+Content-Type: {{contentType}}
+
+###
+GET {{baseURL}}/todos
+Content-Type: {{contentType}}
+
+###
+GET {{baseURL}}/todos/f5b816cd-6d68-4f31-818c-19f22d59e086
+Content-Type: {{contentType}}
+
+
+###
+POST {{baseURL}}/todos
+Content-Type: {{contentType}}
+
+{
+  "task": "task to do",
+  "description": "aqui vai uma descrição"
+}
+
+###
+PATCH {{baseURL}}/todos/f5b816cd-6d68-4f31-818c-19f22d59e086
+Content-Type: {{contentType}}
+
+{
+  "isDone": true
+}
+
+###
+DELETE {{baseURL}}/todos/f5b816cd-6d68-4f31-818c-19f22d59e086
+Content-Type: {{contentType}}
